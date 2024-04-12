@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<style>
+  html,
+  body {
+    background-color: #1e1e1e;
+  }
+
+  #mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #1E1F22;
+    text-align: center;
+    width: 90vw;
+    box-shadow: black 0px 0px 10px;
+    ;
+  }
+
+  #mydivheader {
+    background-color: #1E1F22;
+    cursor: move;
+    z-index: 10;
+    color: #fff;
+  }
+
+  .muted {
+    color: gray;
+  }
+
+  .ui-titlebar {
+    display: flex;
+    width: 100%;
+    height: 32px;
+    background: #0072c6;
+    user-select: none;
+    cursor: default;
+  }
+
+  .ui-titleicon {
+    flex-grow: 1;
+    max-width: 32px;
+    max-height: 32px;
+  }
+
+  .ui-titletext {
+    flex-grow: 2;
+    max-height: 32px;
+    width: auto;
+    font: 12px/32px "Segoe UI", Arial, sans-serif;
+    color: #fff;
+    text-indent: 10px;
+  }
+
+  .ui-titlecontrols {
+    max-width: 144px;
+    max-height: 32px;
+    flex-grow: 1;
+  }
+
+  .ui-btn {
+    margin: 0;
+    width: 48px;
+    height: 32px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+  }
+
+  .ui-btn:hover {
+    background: rgba(255, 255, 255, .1);
+  }
+
+  .ui-btn.close:hover {
+    background: #e81123;
+  }
+
+  .ui-btn svg path,
+  .ui-btn svg rect,
+  .ui-btn svg polygon {
+    fill: #fff;
+  }
+
+  .ui-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  #editor {
+    width: 100%;
+    height: 100%;
+  }
+
+  #lite-xl-window-content-body-holder {
+    height: 90vh;
+    display: flex;
+    background-color: #2B2D31;
+  }
+
+  #left_bar {
+    width: 20vw;
+    height: 100%;
+    color: white;
+    background-color: #1E1F22;
+  }
+
+  #main_playground {
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+  }
+
+  /* Remove default bullets */
+  ul,
+  #myUL {
+    list-style-type: none;
+  }
+
+  /* Remove margins and padding from the parent ul */
+  #myUL {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Style the caret/arrow */
+  .caret {
+    cursor: pointer;
+    user-select: none;
+    /* Prevent text selection */
+  }
+
+  /* Create the caret/arrow with a unicode, and style it */
+  .caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+  .caret-down::before {
+    transform: rotate(90deg);
+  }
+
+  /* Hide the nested list */
+  .nested {
+    display: none;
+  }
+
+  /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+  .active {
+    display: block;
+  }
+</style>
+
+<head>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ace-builds@1.33.0/css/theme/chrome.css"
+    integrity="sha256-OOgj1wdLN+Aj6WayO5q1m4teadjGpvFAf00R88PpVRY=" crossorigin="anonymous">
+</head>
+
+<body>
+  <h2 class="muted">Rohanasan - OS</h2>
+  <p class="muted"><i>Power the web with a virtual os</i></p>
+  <p class="muted"><i>- Rohan Vashisht</i></p>
+
+
+  <div id="mydiv">
+    <div id="mydivheader">
+      <div class="ui-titlebar">
+        <!--<div class="ui-titleicon"></div>-->
+        <div class="ui-titletext">/Users/rohanvashisht/lite-xl/edit</div>
+        <div class="ui-titlecontrols">
+          <button class="ui-btn minimize">
+            <svg x="0px" y="0px" viewBox="0 0 10.2 1">
+              <rect x="0" y="50%" width="10.2" height="1" />
+            </svg>
+          </button><button class="ui-btn maximize">
+            <svg viewBox="0 0 10 10">
+              <path d="M0,0v10h10V0H0z M9,9H1V1h8V9z" />
+            </svg>
+          </button><button class="ui-btn close">
+            <svg viewBox="0 0 10 10">
+              <polygon
+                points="10.2,0.7 9.5,0 5.1,4.4 0.7,0 0,0.7 4.4,5.1 0,9.5 0.7,10.2 5.1,5.8 9.5,10.2 10.2,9.5 5.8,5.1" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div></div>
+    <div id="lite-xl-window-content-body-holder">
+      <div id="left_bar">
+        <ul id="myUL">
+          <li><span class="caret">Fortran</span>
+            <ul class="nested">
+              <li>Lite-xl</li>
+              <li>Plugins</li>
+              <li><span class="caret">Some more plugins<< /span>
+                    <ul class="nested">
+                      <li>main.c</li>
+                      <li>White Tea</li>
+                      <li><span class="caret">Green Tea</span>
+                        <ul class="nested">
+                          <li>Sencha</li>
+                          <li>Gyokuro</li>
+                          <li>Matcha</li>
+                          <li>Pi Lo Chun</li>
+                        </ul>
+                      </li>
+                    </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+
+      </div id="main_playground">
+      <div id="editor">function foo(items) {
+        var x = "All this is syntax highlighted";
+        return x;
+        }</div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("mydiv"));
+
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function () {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+      });
+    } 
+  </script>
+
+
+  <script type="module">
+    import ace from 'https://cdn.jsdelivr.net/npm/ace-builds@1.33.0/+esm';
+    var editor = ace.edit("editor");
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.33.0/src-min-noconflict/theme-chrome.min.js"></script>
+
+</body>
+
+</html>
